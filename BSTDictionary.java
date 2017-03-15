@@ -118,4 +118,23 @@ public String preordertraversal(BSTNode<String,SortableString> rootnode){
   s+=preordertraversal(rootnode.getRight());//goes through all nodes attached to right
   return s;
 }//ends preordertraversal
+
+public int depth(){
+    return finddepthwithroot(new BSTNode<String,SortableString>(root.getKey(),root.getElement(),root.getLeft(),root.getRight());
+}//ends depth
+
+public int finddepthwithroot(BSTNode<String,SortableString> rootnode){
+    if(rootnode == null){
+      return 0;
+    }
+    return 1+ Math.max(finddepthwithroot(rootnode.getLeft()),finddepthwithroot(rootnode.getRight()));
+}//ends finddepthwithroot
+
+public BSTNode<String,SortableString> findmin(BSTNode<String,SortableString> a){
+  BSTNode<String,SortableString> tempnode = n;
+  while(tempnode.getLeft() != null){
+    tempnode = tempnode.getLeft();
+  }
+  return tempnode;
+}
 }
